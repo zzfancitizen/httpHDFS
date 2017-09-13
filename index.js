@@ -19,7 +19,6 @@ server.on('request', (req, res) => {
                     conn.createStatement((err, statement) => {
                         statement.executeUpdate(sql,
                             (err, count) => {
-                                console.log(err)
                                 if (err) {
                                     res.statusCode = 500;
                                     res.write(err);
