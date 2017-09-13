@@ -1,8 +1,8 @@
 var JDBC = require('jdbc');
 var jinst = require('jdbc/lib/jinst');
 
-const driverPath = './drivers/';
-const libPath = './lib/drivers/';
+var driverPath = './drivers/';
+var libPath = './lib/drivers/';
 
 if (!jinst.isJvmCreated()) {
     jinst.addOption("-Xrs");
