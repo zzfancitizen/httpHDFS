@@ -1,3 +1,4 @@
 applications:
 - name: hive-jdbc-app
+  buildpack: https://github.com/cloudfoundry/nodejs-buildpack
   command: npm run start
