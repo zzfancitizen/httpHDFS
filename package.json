@@ -1,0 +1,26 @@
+{
+  "name": "httphdfs",
+  "version": "1.0.0",
+  "description": "httpHDFS connection test",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "httpFS",
+    "connection",
+    "test"
+  ],
+  "author": "Andy",
+  "license": "ISC",
+  "dependencies": {
+    "async": "^2.5.0",
+    "install": "^0.10.1",
+    "jdbc": "^0.5.1",
+    "jshs2": "^0.4.2",
+    "lodash": "^4.17.4",
+    "node-hive": "^0.1.1",
+    "thrift": "^0.10.0",
+    "thrift-hive": "0.0.7"
+  }
+}
