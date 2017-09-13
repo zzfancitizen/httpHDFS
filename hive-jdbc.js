@@ -47,6 +47,7 @@ if (!jinst.isJvmCreated()) {
 
 var config = {
     url: 'jdbc:hive2://localhost:10000/i072179;user=i072179;password=Zzfan_54142306',
+    // url: 'jdbc:hive2://localhost:10000/default',
     minpoolsize: 10,
     maxpoolsize: 100
 };
