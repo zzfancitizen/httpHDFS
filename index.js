@@ -1,6 +1,5 @@
 const http = require("http");
 const hsqldb = require("./hive-jdbc");
-const asyncjs = require("async");
 
 let server = http.createServer().listen(process.env.PORT || 3000);
 
