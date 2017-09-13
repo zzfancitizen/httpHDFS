@@ -1,24 +1,24 @@
-const http = require("http");
-const hsqldb = require("./hive-jdbc");
+var http = require("http");
+var hsqldb = require("./hive-jdbc");
 
-let server = http.createServer().listen(process.env.PORT || 3000);
+var server = http.createServer().listen(process.env.PORT || 3000);
 
-server.on('request', (req, res) => {
+server.on('request', function (req, res) {
     if (req.method == 'POST') {
-        let body = '';
-        req.on('data', (chunk) => {
+        var body = '';
+        req.on('data', function (chunk) {
             body = chunk.toString('utf8');
         });
-        req.on('end', () => {
-            let myRow = JSON.parse(body);
-            let sql = "insert into i072179.employee" + " values(" + myRow.id + ", '" + myRow.name + "', '" + myRow.salary + "', '" + myRow.destination + "')".toString();
-            hsqldb.reserve((err, connObj) => {
+        req.on('end', function () {
+            var myRow = JSON.parse(body);
+            var sql = "insert into i072179.employee" + " values(" + myRow.id + ", '" + myRow.name + "', '" + myRow.salary + "', '" + myRow.destination + "')".toString();
+            hsqldb.reserve(function (err, connObj) {
                 if (connObj) {
                     console.log("Using connection: " + connObj.uuid);
-                    let conn = connObj.conn;
-                    conn.createStatement((err, statement) => {
+                    var conn = connObj.conn;
+                    conn.createStatement(function (err, statement) {
                         statement.executeUpdate(sql,
-                            (err, count) => {
+                            function (err, count) {
                                 if (err) {
                                     res.statusCode = 500;
                                     res.write(err);

@@ -1,5 +1,5 @@
-let JDBC = require('jdbc');
-let jinst = require('jdbc/lib/jinst');
+var JDBC = require('jdbc');
+var jinst = require('jdbc/lib/jinst');
 
 const driverPath = './drivers/';
 const libPath = './lib/drivers/';
@@ -45,26 +45,26 @@ if (!jinst.isJvmCreated()) {
     ]);
 }
 
-let config = {
+var config = {
     url: 'jdbc:hive2://localhost:10000/i072179;user=i072179;password=Zzfan_54142306',
     minpoolsize: 10,
     maxpoolsize: 100
 };
 
-let hsqldb = new JDBC(config);
+var hsqldb = new JDBC(config);
 
-hsqldb.initialize((err) => {
+hsqldb.initialize(function (err) {
     if (err) {
         console.error(err);
     }
 });
 
-hsqldb.reserve((err, connObj) => {
+hsqldb.reserve(function (err, connObj) {
     console.log("Using connection: " + connObj.uuid);
-    let conn = connObj.conn;
-    conn.createStatement((err, statement) => {
+    var conn = connObj.conn;
+    conn.createStatement(function (err, statement) {
         statement.executeUpdate("insert into i072179.employee values (2, 'Kevin', '10000', 'Shanghai')",
-            (err, count) => {
+            function (err, count) {
                 if (err) {
                     console.error(err)
                 } else {
